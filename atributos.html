@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificar atributos HTML</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Curso de JavaScript aplicado a HTML</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contenido.html">Modificar contenido HTML</a>
+    <a href="atributos.html">Modificar atributos HTML</a>
+    <a href="estilos.html">Modificar estilos CSS</a>
+  </nav>
+
+  <main>
+    <h2>Modificar atributos HTML</h2>
+    <p>Con <code>setAttribute()</code> podemos cambiar los atributos de un elemento.</p>
+
+    <p><a id="enlace" href="https://www.w3schools.com">Enlace a W3Schools</a></p>
+    <input id="campo" type="text" placeholder="Escribe aquí">
+    <br><br>
+    <button onclick="cambiarAtributos()">Cambiar atributos</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Curso de JavaScript - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Cambia el destino del enlace y el placeholder del campo de texto
+    function cambiarAtributos() {
+      document.getElementById("enlace").setAttribute("href", "https://developer.mozilla.org");
+      document.getElementById("enlace").innerHTML = "Enlace a MDN";
+      document.getElementById("campo").setAttribute("placeholder", "El atributo ha cambiado");
+    }
+  </script>
+</body>
+</html>

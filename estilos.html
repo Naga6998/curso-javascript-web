@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificar estilos CSS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Curso de JavaScript aplicado a HTML</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contenido.html">Modificar contenido HTML</a>
+    <a href="atributos.html">Modificar atributos HTML</a>
+    <a href="estilos.html">Modificar estilos CSS</a>
+  </nav>
+
+  <main>
+    <h2>Modificar estilos CSS</h2>
+    <p>Con la propiedad <code>style</code> podemos cambiar el CSS de un elemento desde JavaScript.</p>
+
+    <p id="texto">Este texto va a cambiar de estilo.</p>
+    <button onclick="cambiarColor()">Cambiar color</button>
+    <button onclick="cambiarTamano()">Cambiar tamaño</button>
+    <button onclick="restablecer()">Restablecer</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Curso de JavaScript - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Cambia el color del texto a rojo accediendo a la propiedad style
+    function cambiarColor() {
+      document.getElementById("texto").style.color = "red";
+    }
+
+    // Aumenta el tamaño de la fuente del párrafo
+    function cambiarTamano() {
+      document.getElementById("texto").style.fontSize = "35px";
+    }
+
+    // Vuelve a dejar los estilos como estaban (cadena vacía elimina el estilo en línea)
+    function restablecer() {
+      document.getElementById("texto").style.color = "";
+      document.getElementById("texto").style.fontSize = "";
+    }
+  </script>
+</body>
+</html>
