@@ -23,7 +23,10 @@
     <p>Con la propiedad <code>innerHTML</code> podemos cambiar el contenido de cualquier elemento.</p>
 
     <p id="demo">Este texto va a cambiar al pulsar el botón.</p>
+    <input id="nuevoTexto" type="text" placeholder="Escribe tu propio texto">
+    <br><br>
     <button onclick="cambiarContenido()">Cambiar contenido</button>
+    <button onclick="restablecer()">Restablecer</button>
   </main>
 
   <footer>
@@ -31,9 +34,19 @@
   </footer>
 
   <script>
-    // Cambia el contenido del párrafo con id "demo"
+    // Guardamos el texto original para poder restablecerlo
+    const textoOriginal = document.getElementById("demo").innerHTML;
+
+    // Cambia el contenido del párrafo por lo que el usuario escriba
     function cambiarContenido() {
-      document.getElementById("demo").innerHTML = "¡Hola! He cambiado el contenido con JavaScript.";
+      const texto = document.getElementById("nuevoTexto").value;
+      document.getElementById("demo").innerHTML = texto || "¡Hola! He cambiado el contenido con JavaScript.";
+    }
+
+    // Vuelve a dejar el párrafo con su texto original
+    function restablecer() {
+      document.getElementById("demo").innerHTML = textoOriginal;
+      document.getElementById("nuevoTexto").value = "";
     }
   </script>
 </body>
